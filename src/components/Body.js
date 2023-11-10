@@ -1,12 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Avatar from '../assets/sath.png';
-import VideoBackground from '../assets/beach-isla.mp4';
+import VideoBackground from '../assets/background.mp4';
 
 const Body = () => {
   const videoRef = useRef(null);
 
-  const roles = ["Data Analyst", "Tech Enthusiast", "Cinephile", "Software Engineer", "UI/UX Designer"];
+  const roles = ["📊 Data Analyst", "🤖 Machine Learning Engineer", "💻 Computer Scientist", "👨🏽‍🎨 UI/UX Designer", "👨🏽‍💻 Tech Enthusiast", "🎬 Cinephile", "⛹🏽 Hooper", "🏏 Cricketer"];
   const [roleIndex, setRoleIndex] = useState(0);
 
   // Function to update the role
@@ -17,8 +17,15 @@ const Body = () => {
   // Adjust the playback rate when the component mounts
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.22; // Adjust this value to slow down or speed up the video
+      videoRef.current.playbackRate = 0.75; // Adjust this value to slow down or speed up the video
     }
+
+    // Event listener for when the video ends
+    videoRef.current.addEventListener('ended', () => {
+      videoRef.current.currentTime = 0; // Rewind to the beginning
+      videoRef.current.play(); // Play forward again
+    });
+
 
     // Set an interval to update the role
     const roleInterval = setInterval(updateRole, 2000); // Change roles every 2 seconds

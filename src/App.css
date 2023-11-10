@@ -1,9 +1,10 @@
+@import './fonts.css';
 .App {
   text-align: center;
 }
 a, a:active, a:hover {
   text-decoration: none;
-  color: blue;
+  color: white;
   outline: 0;
 }
 
@@ -16,6 +17,7 @@ a, a:active, a:hover {
   height: 5rem;
   z-index: 2;
   background: rgba(0, 0, 0, 0.3);
+  font-family: "Apercu"
 }
 
 .header-logo {
@@ -71,7 +73,9 @@ a, a:active, a:hover {
 }
 /* End Header section */
 
+
 /* Video Background */
+
 .video-background {
   position: relative;
   top: 0;
@@ -80,7 +84,10 @@ a, a:active, a:hover {
   height: 100vh; /* 100% of viewport height */
   object-fit: cover;
   z-index: -1; /* Behind all other content */
-}
+} 
+
+
+
 
 /* Body Section */
 .body {
@@ -93,6 +100,7 @@ a, a:active, a:hover {
   position: relative;
   background: none;
   z-index: 1; /* Above the video background */
+  font-family: "Apercu", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 .body .body-container {
@@ -157,55 +165,105 @@ a, a:active, a:hover {
 }
 /* End Body Section */ 
 
-
-/* About Section  */
+/* About Section */
 .about {
-  height: 72vh;
+  height: 85vh;
   width: 100%;
   padding: 4rem 5rem;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+  background: linear-gradient(
+    #0c0c2e,
+    #180c33 80%,
+    #000000 100%
+  );
+  color: white;
 }
 
-.about-heading {  
-  font-size: 4rem;
-  text-transform: uppercase;
-  letter-spacing: .3rem;
-  color: black;
-}
-
+/* Add this to your existing CSS file */
 .about-info {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center; /* Center content vertically */
+  flex-direction: row; /* Display content in a row */
+  flex-wrap: wrap;
 }
 
-.about .about-info .about-desc {
+.about-heading {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: white;
+  margin-right: 20px; /* Add margin to separate heading from image */
+}
+
+.about-img img {
+  width: 100px; /* Adjust the width as needed */
+  border-radius: 10px;
+}
+
+
+.about-desc {
   font-size: 1.7rem;
   line-height: 2rem;
-  max-width: 50%;
-  margin-top: -0.2rem;
-  display: flex;
-  align-items: center;
-}
-.about .about-img {
-    display: block;
+  max-width: 800px; /* Adjust the max-width as needed */
+  margin-top: 1rem; /* Add margin for separation */
+  text-align: justify;
+  font-family: "DonegalOne-Regular", sans-serif;
 }
 
-.about .about-img .about-img-wrapper {
-  padding: 15px;
-  margin-top: 30px;
-  height: auto;
-  max-width: 400px;
-  position: relative;
-  display: inline-block;
-  border-radius: 60%;
-  border: 1vh solid #cbd5e1;
+
+
+
+
+
+/* Add these styles to your existing CSS file */
+
+.about .star {
+  position: absolute;
+  background: white;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  animation: twinkle 2s infinite;
+  opacity: 0.8;
 }
-.about .about-img .about-img-wrapper img {
-  width: 60%;
+
+.about .star1 {
+  top: 20%;
+  left: 10%;
 }
-/* End About Section  */
+
+.about .star2 {
+  top: 70%;
+  left: 80%;
+}
+
+.about .star3 {
+  top: 40%;
+  left: 50%;
+}
+.about .stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1; /* Behind the content */
+  background-color: #0c0c2e; /* Adjust to match your background color */
+}
+/* Add more styles for additional stars */
+
+
+
+/* Add more styles for additional stars */
+
+
+/* End About Section */
+
 
 
 /* Projects section */
@@ -213,12 +271,14 @@ a, a:active, a:hover {
   background-color: #e9d5a1;
   height: 65vh;
   margin-top: -2rem;
+  font-family: "Apercu", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 .heading {
   font-size: 2rem;
   text-transform: uppercase;
   padding: 1rem;
   letter-spacing: .3rem;
+  
 }
 .projects-container {
   padding: 3rem;
@@ -513,11 +573,12 @@ a, a:active, a:hover {
 
 /* Skills section */
 .skills {
-  background-color: white;
+  background-color: lightblue;
   height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Apercu", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 .title {
@@ -606,35 +667,215 @@ a, a:active, a:hover {
 } 
 /* End Skills section */
 
-/* Footer section  */
+/* Footer section */
 .footer {
-    min-height: 20vh;
-    width: 100%;
-    background-color: black;
-    color: white;
-    flex-direction: column;
-    text-align: center;
-    padding: 5rem;
+  min-height: 20vh;
+  width: 100%;
+  background-color: black;
+  color: white;
+  flex-direction: column;
+  text-align: center;
+  padding: 5rem;
 }
+
 .footer .footer-contact-info {
-    padding: 20px;
+  padding: 20px;
 }
+
 .footer .footer-contact-info .footer-heading {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
+
 .footer .footer-contact-info .footer-contact-access {
-    font-size: 1.4rem;
-    padding-top: 10px;
-    letter-spacing: .2rem;
+  font-size: 1.4rem;
+  padding-top: 10px;
+  letter-spacing: 0.2rem;
   margin-bottom: -0.1rem;
 }
+
 .footer .social-icons a {
-    color: white;
-    font-size: 3rem;
-    margin: 0.7rem;
-    display: inline-block;
+  color: white;
+  font-size: 3rem;
+  margin: 0.7rem;
+  display: inline-block;
 }
-/* End Footer section  */
+
+/* Contact form styling */
+.footer .footer-contact-info form input,
+.footer .footer-contact-info form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  color: white;
+  margin: 0 0 8px 0;
+  padding: 18px 26px;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  transition: 0.3s ease-in-out;
+}
+
+.footer .footer-contact-info form input:focus,
+.footer .footer-contact-info form textarea:focus {
+  background: rgba(255, 255, 255, 1);
+  color: black;
+}
+
+.footer .footer-contact-info form input::placeholder,
+.footer .footer-contact-info form textarea::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+
+.footer .footer-contact-info form input:focus::placeholder,
+.footer .footer-contact-info form textarea:focus::placeholder {
+  color: black;
+  opacity: 0.8;
+}
+
+.footer .footer-contact-info form button {
+  font-weight: 700;
+  color: black;
+  background-color: white;
+  padding: 14px 48px;
+  font-size: 18px;
+  margin-top: 25px;
+  border-radius: 0;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.footer .footer-contact-info form button span {
+  z-index: 1;
+  position: relative;
+}
+
+.footer .footer-contact-info form button:hover {
+  color: white;
+}
+
+.footer .footer-contact-info form button::before {
+  content: "";
+  background: black;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.footer .footer-contact-info form button:hover::before {
+  width: 100%;
+}
+
+/* End Footer section */
+
+
+
+/* Timeline section */
+/* Timeline.css (external CSS file) */
+.timeline {
+  padding: 2rem 0;
+  background-color: #F5F5DC; /* Set your desired background color */
+  text-align: center;
+  height: 30vh;
+  margin: 0;
+}
+
+.timeline-heading {
+  font-size: 4rem;
+  color: black;
+  margin: 3rem 0;
+  text-align: center;
+  margin-top: 5%;
+  letter-spacing: 0.3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: #333; /* Set your desired text color */
+  text-align: center;
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeline-element {
+  width: 23%; /* Adjust the width as needed, leaving some space for margins */
+  margin-bottom: 1rem;
+  flex: 1;
+}
+.timeline-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.timeline-box {
+  border: 2px solid #333;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  text-align: center;
+  width: 100%; /* Set each box to take up the full width */
+}
+
+.timeline p {
+  margin: 0;
+}
+
+.timeline h2 {
+  text-align: center;
+  margin-bottom: 1rem; /* Add space between heading and timeline */
+}
+.timeline h4 {
+  text-align: center;
+}
+
+
+.iconsBackground {
+  background-color: #007bff; /* Set your desired background color */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.timeline-text-content {
+  flex-grow: 1;
+  padding: 1rem; /* Add padding to separate content from the icons */
+  max-width: 300px; /* Adjust the maximum width as needed */
+  background: white; /* Set a background color for the content area */
+  border: 1px solid #007bff; /* Add a border around the content area */
+}
+
+.mbr-timeline-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff; /* Set your desired text color */
+}
+
+.mbr-timeline-text {
+  font-size: 1.1rem;
+  color: #666; /* Set your desired text color */
+}
+.mbr-timeline-text.mbr-fonts-style.display-7 {
+  text-align: center;
+}

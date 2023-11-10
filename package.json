@@ -6,19 +6,35 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "animate.css": "^4.1.1",
+    "axios": "^1.6.1",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "emailjs-com": "^3.2.0",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "jsdom": "^22.1.0",
+    "node-fetch": "^3.3.2",
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^21.5.0",
     "react": "^18.2.0",
+    "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+    "react-on-screen": "^2.1.1",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
+    "request": "^2.88.2",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm-run-all -s scraper app",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "app": "react-scripts start",
+    "scraper": "node src/scraper/scraper.js"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
