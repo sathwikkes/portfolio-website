@@ -21,9 +21,12 @@
     "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+    "react-motion": "^0.5.2",
     "react-on-screen": "^2.1.1",
+    "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
+    "react-smooth-scroll": "^0.1.0",
     "request": "^2.88.2",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"

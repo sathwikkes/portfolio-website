@@ -1,82 +1,6 @@
-// import React, { useEffect, useState } from 'react';
-// //const fs = require('fs');
-// //const jsonFilePath = '../data/randomEvents.json';
+
 
 import Events from "../data/randomEvents.json";
-// import React, { useEffect, useState } from 'react';
-// import scraper from '../scraper/scraper';  // Adjust the import path based on your directory structure
-
-
-// console.log(Events)
-// const Timeline = () => {
-//   const [events, setEvents] = useState([]);
-
-//   useEffect(() => {
-//     // Fetch and set the events data from randomEvents.json
-//     fetch(Events)
-//     .then((response) => {
-//       // Log the response to the console
-//       //console.log(response);
-//       // Parse the response as JSON
-//       return response.json();
-//     })
-//     .then((data) => setEvents(data))
-//     .then((data) => {
-//       // Convert the object to an array
-//       const eventArray = Object.values(data);
-//       // Update the state with the array
-//       setEvents(eventArray);
-//       // console.log(eventArray)
-//     })
-//     .catch((error) => console.error('Error loading randomEvents.json:', error));
-
-//   }, []);
-
-//   return (
-//     <div className="timeline">
-//       <div className="timeline-container">
-//         {events.map((event, index) => (
-//           <div className="timeline-element" key={index}>
-//             <div className="timeline-box">{event}</div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-//export default Timeline;
-
-
-
-// import React from 'react';
-
-// const Timeline = () => {
-//   return (
-//     <div className="timeline">
-//       <div className="timeline-container">
-//         <div className="timeline-element">
-//           <div className="timeline-box">Box 1</div>
-//         </div>
-//         <div className="timeline-element">
-//           <div className="timeline-box">Box 2</div>
-//         </div>
-//         <div className="timeline-element">
-//           <div className="timeline-box">Box 3</div>
-//         </div>
-//         <div className="timeline-element">
-//           <div className="timeline-box">Box 4</div>
-//         </div>
-//         <div className="timeline-element">
-//           <div className="timeline-box">Box 5</div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Timeline;
-
 import React from 'react';
 
 const Timeline = () => {
@@ -105,18 +29,74 @@ const Timeline = () => {
 
   // Get the current date
   const currentDate = new Date();
-  // Format the date as needed (e.g., "November 9, 2023")
+  // Format the date as needed (e.g., "November 9")
   const formattedDate = currentDate.toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
   });
 
   return (
+
     <div id="timeline" className="timeline">
-      <h2 className="timeline-heading">Snapshot of History on {formattedDate}</h2>
+      <h2 class="title">Fun Facts</h2>  
+      <h3 className="timeline-heading">Snapshot of History on {formattedDate}</h3>
       <div className="timeline-container">
         {/* Render the array of JSX elements inside the timeline container */}
         {timelineElements}
+      </div>
+      <h3 className="timeline-heading">Top 5</h3>
+    <div className="top5-container">
+      <div className="top5-list">
+          <h2>Last 5 Movies/TV Shows Watched</h2>
+          <ul>
+            <li>Peaky Blinders</li>
+            <li>Shameless</li>
+            <li>Oppenheimer</li>
+            <li>Yellowstone</li>
+            <li>Spiderman Across the Spiderverse</li>
+          </ul>
+        </div>
+        <div className="top5-list">
+        <h2>Top 5 Basketball Players</h2>
+        <ul>
+          <li>Kobe Bryant</li>
+          <li>Lebron James</li>
+          <li>Kevin Durant</li>
+          <li>Tim Duncan</li>
+          <li>Nikola Jokic</li>
+        </ul>
+      </div>
+      <div className="top5-list">
+        <h2>5 Places I want to visit</h2>
+        <ul>
+          <li>Chernobyl Exclusion Zone</li>
+          <li>The Door to Hell</li>
+          <li>Easter Island</li>
+          <li>The Treasury</li>
+          <li>Antartica</li>
+        </ul>
+      </div>
+      <div className="top5-list">
+        <h2>5 Tech Innovations I am looking forward to </h2>
+        <ul>
+          <li>Biotechnology</li>
+          <li>Quantum Computing</li>
+          <li>Battery Advancements</li>
+          <li>Artificial Intelligence</li>
+          <li>Space Exploration</li>
+        </ul>
+      </div>
+      <div className="top5-list">
+        <h2>5 Resarch Papers to Read</h2>
+        <ul>
+          <li><a href="https://link.springer.com/article/10.1007/s11023-020-09548-1" title="Click here to visit">GPT-3: Its Nature, Scope, Limits, and Consequences</a> </li>
+          <li><a href="https://openaccess.thecvf.com/content_cvpr_2016/papers/Redmon_You_Only_Look_CVPR_2016_paper.pdf" title="Click here to visit">You Only Look Once: Unified, Real-Time Object Detection</a> </li>
+          <li><a href="https://arxiv.org/pdf/1905.11946v5.pdf" title="Click here to visit">EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks</a></li>
+          <li><a href="https://arxiv.org/pdf/1810.04805v2.pdf" title="Click here to visit">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a></li>
+          <li><a href="https://arxiv.org/pdf/1912.04958v2.pdf"title="Click here to visit">Analyzing and Improving the Image Quality of StyleGAN</a></li>
+        </ul>
+      </div>
+
       </div>
     </div>
   );
@@ -124,31 +104,4 @@ const Timeline = () => {
 
 export default Timeline;
 
-// const Timeline = () => {
-//   const [events, setEvents] = useState([]);
 
-//   useEffect(() => {
-//     scraper().then((randomEvents) => {
-//       // Set the random events to the state
-//       setEvents(randomEvents);
-//     });
-//   }, []);
-
-//   const timelineElements = events.map((event, index) => (
-//     <div className="timeline-element" key={index}>
-//       <div className="timeline-box">
-//         <p>{event}</p>
-//       </div>
-//     </div>
-//   ));
-
-//   return (
-//     <div className="timeline">
-//       <div className="timeline-container">
-//         {timelineElements}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Timeline;

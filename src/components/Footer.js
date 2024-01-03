@@ -1,5 +1,5 @@
 // // Create your Footer component here
- import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+ import { FaFacebook, FaTwitter, FaInstagram, FaApple } from 'react-icons/fa';
 
 // const Footer = () => {
 //     return (
@@ -122,6 +122,7 @@ const Footer = () => {
                     <a href="https://www.facebook.com/sathwikthecreator/"><i><FaFacebook /></i></a>
                     <a href=""><i><FaInstagram /></i></a>
                      <a href=""><i><FaTwitter /></i></a>
+                     <a href="https://music.apple.com/profile/sathwikthecreator"><i><FaApple /></i></a>
         </div>
       </div>
     </footer>
