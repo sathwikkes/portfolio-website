@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaChartBar, FaGithub, FaLinkedin } from 'react-icons/fa';
 import Avatar from '../assets/sath.png';
 import VideoBackground from '../assets/background.mp4';
 
@@ -61,6 +61,13 @@ const Body = () => {
                 <FaLinkedin />
               </i>
             </a>
+            <a href="https://public.tableau.com/app/profile/sathwik.kesappragada/vizzes" target="_blank" rel="noreferrer" className="icon-link">
+              <i>
+                <FaChartBar />
+              </i>
+            </a>
+
+
           </div>
         </div>
       </div>
