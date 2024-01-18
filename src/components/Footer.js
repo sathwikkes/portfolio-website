@@ -1,5 +1,12 @@
 // // Create your Footer component here
- import { FaFacebook, FaTwitter, FaInstagram, FaApple } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaFacebook, FaTwitter, FaInstagram, FaApple } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
+
+
+const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 // const Footer = () => {
 //     return (
@@ -25,7 +32,6 @@
 
 // Update your Footer component
 
-import React, { useState } from 'react';
 
 const Footer = () => {
   const initialFormDetails = {
@@ -52,15 +58,44 @@ const Footer = () => {
     e.preventDefault();
     setButtonText('Sending...');
 
-    // Add your code to send the contact form data to the server.
+    try {
+      console.log('serviceId:', serviceId);
+      console.log('templateId:', templateId);
+      console.log('publicKey:', publicKey);
+      console.log('formDetails:', formDetails);
+      // Use EmailJS send function to send the email
+      const response = await emailjs.send(
+        serviceId, // replace with your EmailJS service ID
+        templateId, // replace with your EmailJS template ID
+        {
+          ...formDetails,
+          from_name: `${formDetails.firstName} ${formDetails.lastName}`, // Combine first and last names
+        },
+        publicKey // replace with your EmailJS user ID
+      );
+      // Check the status of the response
+      if (response.status === 200) {
+        // Email sent successfully
+        setStatus({
+          success: true,
+          message: 'Message sent successfully',
+        });
+      } else {
+        // Email sending failed
+        setStatus({
+          success: false,
+          message: 'Error sending message. Please try again later.',
+        });
+      }
+    } catch (error) {
+      // Handle errors if the email sending fails
+      setStatus({
+        success: false,
+        message: 'Error sending message. Please try again later.',
+      });
+    }
 
-    // Once the data is sent and processed, you can update the status state.
-
-    // Example status update:
-    setStatus({
-      success: true, // or false based on the result
-      message: 'Message sent successfully', // Update with an appropriate message
-    });
+      
 
     setFormDetails(initialFormDetails);
     setButtonText('Send');
@@ -124,6 +159,7 @@ const Footer = () => {
                      <a href=""><i><FaTwitter /></i></a>
                      <a href="https://music.apple.com/profile/sathwikthecreator"><i><FaApple /></i></a>
         </div>
+        <div id="copyright">© Copyright 2024 Sathwik Kesappragada</div>
       </div>
     </footer>
   );

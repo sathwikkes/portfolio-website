@@ -1,4 +1,4 @@
 .env
 
 src/data/subscriptions_data.json
-node_modules/
+node_modules/ 
