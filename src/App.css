@@ -444,6 +444,15 @@ a, a:active, a:hover {
     border-radius: 8%;
     color: rgba(30, 39, 46, 0.7);
   }
+
+  .skills{
+    height: 57vh;
+  
+  }
+  .timeline{
+    height: 130vh;
+
+  }
 }
 @media (min-width: 1000px) { 
   .projects-container {
@@ -837,16 +846,18 @@ a, a:active, a:hover {
 #about-timeline {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: -35px; /* Adjust the value as needed */
 }
 
 
+
 #about-timeline .timeline-element {
-	padding-top:0px; 
+	padding-top:15px; 
 	padding-bottom: 10px; 
   display: flex;
   flex-direction: column;
   margin-right: 20px;
+  
 }
 
 #about-timeline .timeline-element h4 {
@@ -1046,7 +1057,14 @@ a, a:active, a:hover {
     font-size: 1.25rem;
     align-items: center;
   }
-
+  .timeline{
+    height: 115vh;
+  }
+  .container{
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 795px) {
@@ -1060,20 +1078,61 @@ a, a:active, a:hover {
     font-size: 1.4rem;
   }
   #about-timeline {
-    padding: 0 2rem;
     flex-direction: column;
   }
   #about-timeline .timeline-element {
     position: relative;
-    height: 15vh;
-    margin: 1rem 1rem 1rem 0;
     display: flex;
-    bottom: 20px;
-    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     
   }
+  .timeline{
+    height: 125vh;
+  }
+  .container{
+    position: relative;
+    
+    flex-direction: column;
+    align-items: left;
+    margin-right: 150px;
+  }
+
+}
+@media (min-width: 500px) and (max-width: 743px){
+  .skills{
+    height: 57vh;
+  }
+}
+@media (min-width: 526px) and (max-width: 670px){
+  .timeline{
+    height: 135vh;
+  }
+}
+@media (max-width:525px){
+  .timeline{
+    height: 170vh;
+  }
+}
+@media (min-width: 243px) and (max-width: 476px){
+  .timeline{
+    height: 210vh;
+  }
+}
+@media (min-width: 450px) and (max-width:622px ){
+  .about{
+    height: 125vh;
+  }
+  .about-timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #about-timeline .timeline-element{
+    margin-bottom: 40px;
+
+  }
+
 
 }
 
