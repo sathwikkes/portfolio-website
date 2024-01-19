@@ -1,10 +1,20 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { FaChartBar, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaChartBar, FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa';
 import Avatar from '../assets/sath.png';
 import VideoBackground from '../assets/background.mp4';
+import AWS from 'aws-sdk'; 
+AWS.config.update({ 
+  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID, 
+  secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY, 
+  region: process.env.REACT_APP_AWS_REGION, 
+  bucket: process.env.REACT_APP_AWS_S3_BUCKET_NAME, 
+});
+
+const s3 = new AWS.S3();
 
 const Body = () => {
   const videoRef = useRef(null);
+  const [resumePresignedUrl, setResumePresignedUrl] = useState(null);
 
   const roles = ["📊 Data Analyst", "🤖 Machine Learning Engineer", "💻 Computer Scientist", "👨🏽‍🎨 UI/UX Designer", "👨🏽‍💻 Tech Enthusiast", "🎬 Cinephile", "⛹🏽 Hooper", "🏏 Cricketer"];
   const [roleIndex, setRoleIndex] = useState(0);
@@ -25,6 +35,21 @@ const Body = () => {
       videoRef.current.currentTime = 0; // Rewind to the beginning
       videoRef.current.play(); // Play forward again
     });
+    const generatePresignedUrlForResume = async () => {
+      try {
+        const params = {
+          Bucket: process.env.REACT_APP_AWS_S3_BUCKET_NAME,
+          Key: 'Sathwik-Kesappragada-Resume.pdf', // Replace with the S3 object key for your resume
+          Expires: 60, // Presigned URL expiration time in seconds
+        };
+        const url = await s3.getSignedUrlPromise('getObject', params);
+        setResumePresignedUrl(url);
+      } catch (error) {
+        console.error('Error generating presigned URL for resume:', error);
+      }
+    };
+  
+    generatePresignedUrlForResume();
 
 
     // Set an interval to update the role
@@ -61,6 +86,13 @@ const Body = () => {
                 <FaLinkedin />
               </i>
             </a>
+            {resumePresignedUrl && (
+            <a href={resumePresignedUrl} target="_blank" rel="noreferrer" className="icon-link">
+              <i>
+                <FaFilePdf />
+            </i>
+            </a>
+          )}
             <a href="https://public.tableau.com/app/profile/sathwik.kesappragada/vizzes" target="_blank" rel="noreferrer" className="icon-link">
               <i>
                 <FaChartBar />
