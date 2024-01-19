@@ -1,18 +1,10 @@
 const About = () => {
   return (
     <div id="about" className="about">
-      {/* Shooting Stars Animation
-      <div className="stars-container">
-        <ShootingStars />
-      </div> */}
-
       <div className="about-info">
         {/* Heading and Image */}
         <div className="heading-image">
           <h1 className="about-heading">About Me</h1>
-          {/* <div className="about-img">
-            <img src={IMG} alt="Detective" className="about-img-medium" />
-          </div> */}
         </div>
 
         {/* Existing paragraph with detective image */}
@@ -80,12 +72,8 @@ const About = () => {
           </ul>
         </div>
 
-
-
-
       </div>
     </div>
-
 
   );
 };

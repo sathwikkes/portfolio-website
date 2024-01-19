@@ -62,7 +62,7 @@ const Photography = () => {
         })
       );
       setPresignedUrls(urls);
-      console.log(urls)
+      //console.log(urls)
     };
 
     generatePresignedUrlsForAlbums();

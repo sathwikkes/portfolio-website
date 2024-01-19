@@ -8,31 +8,6 @@ const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
 const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
-// const Footer = () => {
-//     return (
-//         <footer id="footer" className="footer">
-//             <div className="footer-contact-info">
-//                 <h1 className="footer-heading">Connect With Me</h1>
-//                 <p className="footer-contact-access">Email: deliciousmistake@sath.com</p>
-//                 <p className="footer-contact-access">Mobile: 1234 1234 1234</p>
-//             </div>
-//             <div>
-//                 <h1>Social Links</h1>
-//                 <div className="social-icons">
-//                     <a href="https://www.facebook.com/sathwikthecreator/"><i><FaFacebook /></i></a>
-//                     <a href=""><i><FaInstagram /></i></a>
-//                     <a href=""><i><FaTwitter /></i></a>
-//                 </div>
-//             </div>
-//         </footer>
-//     )
-// }
-
-// export default Footer;
-
-// Update your Footer component
-
-
 const Footer = () => {
   const initialFormDetails = {
     firstName: '',
@@ -59,10 +34,10 @@ const Footer = () => {
     setButtonText('Sending...');
 
     try {
-      console.log('serviceId:', serviceId);
-      console.log('templateId:', templateId);
-      console.log('publicKey:', publicKey);
-      console.log('formDetails:', formDetails);
+      // console.log('serviceId:', serviceId);
+      // console.log('templateId:', templateId);
+      // console.log('publicKey:', publicKey);
+      // console.log('formDetails:', formDetails);
       // Use EmailJS send function to send the email
       const response = await emailjs.send(
         serviceId, // replace with your EmailJS service ID

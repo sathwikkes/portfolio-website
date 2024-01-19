@@ -4,10 +4,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import AWS from 'aws-sdk';
 
-import basicImage from '../assets/Software.png';
+//import basicImage from '../assets/Software.png';
 import proj1 from '../assets/movie.png';
 import projImg2 from '../assets/yelp-classification.jpeg';
 import projImg3 from '../assets/cwc2023.jpeg';
+import youtubeImage from '../assets/summarize-youtube-video.png';
+import viceMedia from '../assets/vice-media.jpeg'
+import hackForLA from '../assets/hack-for-la.png'
 
 AWS.config.update({
   accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
@@ -38,23 +41,31 @@ const Projects = () => {
         name: "Cricket Web Scraper",
         description : "Daily scraping tournament stats to keep track of who stays on top the longest.",
         link : "https://github.com/sathwikkes/cricket-world-cup-tracking-web-scraper", 
-        objectKey: "Movie-Recommender.pdf",
+        objectKey: "Cricket-Scraper-Project.pdf",
         image:projImg3,
     },
     {
-        name : "Project 4",
-        description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        link: "https://github.com/", 
-        objectKey: "slide-deck-rec.pdf",
-        image: basicImage,
+        name : "YouTube Video Summarizer",
+        description : "Say goodbye to long videos, save time with summaries",
+        link: "https://github.com/sathwikkes/Youtube-Video-Summarizer", 
+        objectKey: "Youtube-Video-Summarizer.pdf",
+        image: youtubeImage,
     },
     {
-        name : "Project 5",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        link: "https://github.com/", 
-        objectKey: "Movie-Recommender.pdf",
-        image: basicImage,
+        name : "Article Audience Analysis",
+        description: "Recommendations for future content strategies for Vice Media's editorial content",
+        link: "https://github.com/sathwikkes/Vice-Media", 
+        objectKey: "slide-deck-rec.pdf",
+        image: viceMedia,
     },
+    {
+      name: "SEIE Survey Analysis",
+      description: "Neighborhood Council Board members in Los Angeles prioritized housing and homelessness as the most pressing issue for the city, with police concerns rising in specific regions.",
+      link: "https://github.com/hackforla/data-science/tree/seie-survey", 
+      objectKey: "SEIE-Presentation.pdf",
+      image:hackForLA,
+  },
+
   ];
 
   const [presignedUrls, setPresignedUrls] = useState([]);
@@ -80,7 +91,7 @@ const Projects = () => {
         projects.map(async (project) => {
           if (project.objectKey) {
             const url = await generatePresignedUrl(project.objectKey);
-            console.log(`Generated URL for ${project.name}:`, url);
+           // console.log(`Generated URL for ${project.name}:`, url);
             return { ...project, presignedUrl: url };
           }
           return project;
