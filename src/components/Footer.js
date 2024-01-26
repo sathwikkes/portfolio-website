@@ -130,8 +130,8 @@ const Footer = () => {
         <h1>Social Links</h1>
         <div className="social-icons">
                     <a href="https://www.facebook.com/sathwikthecreator/"><i><FaFacebook /></i></a>
-                    <a href=""><i><FaInstagram /></i></a>
-                     <a href=""><i><FaTwitter /></i></a>
+                    <a href="https://www.instagram.com/sathwikthecreator/"><i><FaInstagram /></i></a>
+                     <a href="https://twitter.com/fratwik"><i><FaTwitter /></i></a>
                      <a href="https://music.apple.com/profile/sathwikthecreator"><i><FaApple /></i></a>
         </div>
         <div id="copyright">© Copyright 2024 Sathwik Kesappragada</div>
