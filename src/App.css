@@ -220,6 +220,7 @@ a, a:active, a:hover {
   text-align: justify;
 }
 
+/* End About Section */
 
 .photo-wrapper {
   margin: 10px; /* Adjust as needed */
@@ -240,53 +241,6 @@ a, a:active, a:hover {
   flex-wrap: wrap;
   justify-content: space-between; /* Adjust as needed */
 }
-
-
-/* Add these styles to your existing CSS file */
-
-.about .star {
-  position: absolute;
-  background: white;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  animation: twinkle 2s infinite;
-  opacity: 0.8;
-}
-
-.about .star1 {
-  top: 20%;
-  left: 10%;
-}
-
-.about .star2 {
-  top: 70%;
-  left: 80%;
-}
-
-.about .star3 {
-  top: 40%;
-  left: 50%;
-}
-.about .stars-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1; /* Behind the content */
-  background-color: #0c0c2e; /* Adjust to match your background color */
-}
-/* Add more styles for additional stars */
-
-
-
-/* Add more styles for additional stars */
-
-
-/* End About Section */
-
 
 
 /* Projects section */
@@ -1119,7 +1073,7 @@ a, a:active, a:hover {
     height: 210vh;
   }
 }
-@media (min-width: 450px) and (max-width:622px ){
+@media (min-width: 450px) and (max-width:622px) {
   .about{
     height: 125vh;
   }
@@ -1146,3 +1100,83 @@ a, a:active, a:hover {
 .back-to-home img{
   margin-right: 300px;
 }
+
+@media (max-width: 450px){
+
+  .about{
+    height: 180vh;
+    width: 100vw;
+    display:flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    max-width: 100%;
+  }
+  #about-timeline .timeline-element{
+  
+    margin-top: 110px;
+  }
+
+}
+
+
+@media (max-height:850px){
+
+  .about{
+    min-height: 85vh;
+  }
+
+  .timeline{
+    min-height: 110vh;
+  }
+  .skills{
+    min-height: 60vh;
+  
+  }
+  /* .body
+   
+  #about-timeline .timeline-element
+
+  .top5-container
+
+  .random-channels-container
+
+  .twitter-feed */
+
+
+}
+
+
+@media (max-height: 600px){
+  .about{
+    min-height: 105vh;
+  }
+  
+  .timeline{
+    min-height: 160vh;
+  }
+  .skills{
+    min-height: 70vh;
+  
+  }
+
+}
+
+@media (max-height: 450px){
+  
+  .about{
+    min-height: 130vh;
+  }
+  .projects{
+    min-height: 90vh;
+  }
+  .timeline{
+    min-height: 180vh;
+  }
+  .skills{
+    min-height: 80vh;
+  
+  }
+
+}
+
