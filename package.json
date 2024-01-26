@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@vercel/analytics": "^1.1.2",
     "aws-sdk": "^2.1544.0",
     "date-fns": "^3.3.1",
     "emailjs-com": "^3.2.0",
