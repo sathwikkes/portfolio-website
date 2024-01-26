@@ -9,7 +9,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import arrowImage from '../assets/north-arrowpng.png';
 //import "./App.css";
-import { Link } from "react-smooth-scroll";
+//import { Link } from "react-smooth-scroll";
 const locales = {
     "en-US": require("date-fns/locale/en-US"),
 };
