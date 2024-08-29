@@ -1,8 +1,8 @@
 {
   "version": 2,
   "functions": {
-    "scraper/scraper.js": {
-      "runtime": "nodejs14.x"
+    "api/scraper.js": {
+      "runtime": "vercel/node@14.0.0"
     }
   }
-}
+} 
