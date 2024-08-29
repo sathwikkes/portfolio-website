@@ -1,0 +1,14 @@
+name: Run Scraper
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs at midnight every day
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call Vercel Scraper Function
+        run: curl -X GET https:///portfolio-website-henna-rho.vercel.app/api/scraper
