@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "functions": {
+    "scraper/scraper.js": {
+      "runtime": "nodejs14.x",
+      "cron": "0 0 * * *" // This will run the scraper at midnight every day
+    }
+  }
+}
