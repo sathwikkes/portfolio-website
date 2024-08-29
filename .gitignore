@@ -1,4 +1,4 @@
 .env
 .DS_Store
-src/data/subscriptions_data.json
+#src/data/subscriptions_data.json
 node_modules/ 
