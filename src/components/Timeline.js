@@ -58,7 +58,7 @@ const Timeline = () => {
     // Set the state with random channel names
     setRandomChannelNames(randomChannels);
 
-    console.log('Random Channels:', randomChannels); // Add this line
+    //console.log('Random Channels:', randomChannels); // Add this line
   }, []);
 
   useEffect(() => {
@@ -91,7 +91,7 @@ const Timeline = () => {
   return (
 
     <div id="timeline" className="timeline">
-      <h2 class="title">Fun Facts</h2>  
+      <h2 className="title">Fun Facts</h2>  
       <h3 className="timeline-heading">Snapshot of History on {formattedDate}</h3>
       <div className="timeline-container">
         {/* Render the array of JSX elements inside the timeline container */}
@@ -179,3 +179,4 @@ const Timeline = () => {
 };
 
 export default Timeline;   
+
