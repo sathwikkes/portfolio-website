@@ -1,0 +1,66 @@
+.skills-page {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.text-zone {
+  flex: 1;
+  margin-right: 20px; // Reasonable margin for spacing between elements
+  max-width: 500px;
+
+  p {
+    margin-bottom: 15px;
+    white-space: normal; // Ensure text wraps properly
+    word-break: break-word; // Break long words if necessary
+  }
+
+  .tech-tag {
+    margin: 0 5px;
+    font-weight: bold;
+    display: inline; // Ensure it stays inline with the paragraph text
+    white-space: nowrap; // Prevent wrapping of individual tags
+  }
+}
+
+.skills-charts {
+  flex: 1;
+  display: flex;
+  justify-content: center; // Center aligns the content within this div
+  //align-items: center; // Vertically centers the word cloud
+  margin-top: 0; // Remove any top margin
+  margin-left: 90px; // Remove large left margin
+  padding-left:90px;
+  // right: 15%;
+  width:75%;
+}
+
+@media (max-width: 1500px) {
+  .skills-page {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .text-zone, .skills-charts {
+    margin: 10px 0; // Smaller margins for mobile
+  }
+
+  .text-zone p {
+    font-size: 13px;
+    line-height: 18px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+  }
+
+  .tech-tag {
+    font-size: 15px;
+    font-weight: 100;
+    margin: 0 5px;
+  }
+  .skills-charts {
+    margin-left: 0;
+  }
+
+}
+// before media query was at 1208 
