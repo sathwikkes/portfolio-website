@@ -4,13 +4,14 @@ node_modules/
 storage.rules 
 /.pnp
 .pnp.js
-
+.npmrc
 
 # testing
 /coverage
 
 # production
-/buildcd ..
+build/
+
 
 
 # misc
