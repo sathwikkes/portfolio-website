@@ -1,0 +1,44 @@
+.photography-page {
+  padding: 20px;
+
+  .album-name {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffd700;
+  }
+
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo-wrapper {
+    padding: 10px;
+  }
+
+  .photo {
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  // Media query for window size smaller than 1250px
+  @media (max-width: 1250px) {
+    .photo-wrapper {
+      width: calc(50% - 10px); // 2 photos per row, with some space in between
+      padding: 25px; // Adjust gap between the photos
+    }
+
+    .photo {
+      width: 100%; // Ensure the photos fit the wrapper
+      max-width: 100%; // Prevent overflow
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Slightly smaller shadow for smaller images
+    }
+
+    .slick-slide {
+      justify-content: space-between; // Distribute space between the photos
+    }
+  }
+}

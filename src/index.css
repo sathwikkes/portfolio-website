@@ -1,14 +1,27 @@
-*, :after, :before {
-    box-sizing: border-box;
-}
-
 html {
-    font-size: 10px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 
 body {
-    padding: 0;
-    margin: 0;
+  margin: 0;
+  font: 300 11px/1.4 'Helvetica Neue', sans-serif;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #552583;
+  overflow: hidden;
+  display: block;
 }
+
+.dashboard {
+  margin-top: 200px;
+  margin-left: 200px;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    overflow: visible;
+  }
+}
+
+

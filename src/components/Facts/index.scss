@@ -1,0 +1,137 @@
+.facts-page {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  min-height: 100vh;
+  width: 100%;
+
+  .text-zone {
+    padding-bottom: 40px;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(350px, 1fr));  // Increased minimum width
+    gap: 90px;
+    padding: 0 60px;
+
+    .facts-title {
+      font-size: 24px;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .twitter-feed,
+    .youtube-subscriptions,
+    .bucket-list {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      min-height: 400px;
+      max-height: 500px;
+      overflow: auto;
+      width: 100%;
+    }
+
+    .twitter-feed {
+      iframe {
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .bucket-list {
+      background-color: #FFFF00;
+
+      .bucket-list-items {
+        list-style-type: disc;
+        line-height: 1.6;
+        font-size: 16px;
+        color: #333;
+        padding-left: 20px;
+
+        li {
+          margin-bottom: 10px;
+          strong {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .subscriptions-container {
+      ul {
+        padding: 0;
+        list-style: none;
+
+        .channel-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+
+          .channel-thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+          }
+
+          .channel-link {
+            color: #115173;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+
+            &:hover {
+              text-decoration: underline;
+              color: #ffd700;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .facts-page .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 0 30px;
+
+    .bucket-list {
+      grid-column: span 2; // Make bucket list span both columns
+      max-width: 600px;
+      justify-self: center;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .facts-page {
+    padding: 20px;
+
+    .container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 0 20px;
+
+      .twitter-feed,
+      .youtube-subscriptions,
+      .bucket-list {
+        grid-column: 1;
+        max-width: 600px;
+        justify-self: center;
+        margin: 10px 0;
+      }
+    }
+  }
+}
