@@ -6,14 +6,22 @@ import AnimatedLetters from '../AnimatedLetters';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter, faApple } from '@fortawesome/free-brands-svg-icons';
 import './index.scss';
+import { trackPageView, trackLinkClick } from '../../firebase';
 
 const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
 const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
+
+
+
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const form = useRef();
+
+  useEffect(() => {
+    trackPageView('Contact Page', 'https://sathematics.com/contact');
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -115,22 +123,41 @@ const Contact = () => {
         </div>
         <div className="social-links">
         <h4>Social Media</h4>
-          <div className="social-icons">
-            <a href="https://www.facebook.com/sathwikthecreator/" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="https://www.instagram.com/sathwikthecreator/" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="https://twitter.com/fratwik" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <a href="https://music.apple.com/profile/sathwikthecreator" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faApple}  />
-            </a>
-          </div>
-          {/* <div id="copyright">© Copyright 2024 Sathwik Kesappragada</div> */}
+        <div className="social-icons">
+          <a
+            href="https://www.facebook.com/sathwikthecreator/"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => trackLinkClick('Facebook')}
+          >
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
+          <a
+            href="https://www.instagram.com/sathwikthecreator/"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => trackLinkClick('Instagram')}
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a
+            href="https://twitter.com/fratwik"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => trackLinkClick('Twitter')}
+          >
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
+          <a
+            href="https://music.apple.com/profile/sathwikthecreator"
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => trackLinkClick('Apple Music')}
+          >
+            <FontAwesomeIcon icon={faApple} />
+          </a>
         </div>
+      </div>
       </div>
       <Loader type="pacman" />
     </>

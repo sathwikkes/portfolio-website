@@ -1,14 +1,11 @@
-
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getStorage } from 'firebase/storage';
 import { getFirestore } from 'firebase/firestore';
-import { getDatabase} from "firebase/database"; // Import Realtime Database
-//import dotenv from 'dotenv'; 
+import { getDatabase } from "firebase/database";
+import { logEvent, getAnalytics } from "firebase/analytics";
 
-
-//dotenv.config();
-
+// Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -19,17 +16,28 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 const provider = new GoogleAuthProvider();
 export const db = getFirestore(app);
 export const storage = getStorage(app);
-export const database = getDatabase(app); // Initialize Realtime Database
+export const database = getDatabase(app);
+export const analytics = getAnalytics(app);
+
+// Track a page view
+export const trackPageView = (pageTitle, pageUrl) => {
+  logEvent(analytics, 'page_view', {
+    page_title: pageTitle,
+    page_url: pageUrl,
+  });
+};
+
+// Track a custom event for link clicks
+export const trackLinkClick = (socialPlatform) => {
+  logEvent(analytics, 'social_link_click', {
+    platform: socialPlatform
+  });
+};
 
 export const signInWithGoogle = () => signInWithPopup(auth, provider);
-
-
-
-
-
-
