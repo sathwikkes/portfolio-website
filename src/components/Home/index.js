@@ -60,6 +60,7 @@ const Home = () => {
     }, 100); // Typing speed
 
     return () => clearInterval(typingInterval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [typingIndex, roleIndex]);
 
   useEffect(() => {

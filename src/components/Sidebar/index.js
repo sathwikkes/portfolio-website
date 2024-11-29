@@ -44,7 +44,7 @@ const Sidebar = () => {
       const params = {
         Bucket: process.env.REACT_APP_AWS_S3_BUCKET_NAME,
         Key: 'Sathwik-Kesappragada-Resume.pdf', // Ensure this matches your S3 object key
-        Expires: 60, // Presigned URL expiration time in seconds
+        Expires: 300, // Presigned URL expiration time in seconds
       };
       const url = await s3.getSignedUrlPromise('getObject', params);
       setResumePresignedUrl(url);

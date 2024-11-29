@@ -5,14 +5,20 @@ storage.rules
 /.pnp
 .pnp.js
 .npmrc
-
+src/.DS_Store
+public/.DS_Store
 # testing
 /coverage
 
 # production
 build/
 
+firebase-debug.log
+.firestore/
+.storage/
 
+functions/node_modules/
+functions/.env
 
 # misc
 .DS_Store
@@ -25,4 +31,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-
+package/
+package-lock.json
+package.json
+.firebase/

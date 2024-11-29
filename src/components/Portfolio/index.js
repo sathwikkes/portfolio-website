@@ -34,6 +34,7 @@ const Portfolio = () => {
 
     useEffect(() => {
         getPortfolio();
+    // eslint-disable-next-line no-use-before-define, react-hooks/exhaustive-deps
     }, []);
 
     const getPortfolio = async () => {  // Mark function as async
@@ -55,7 +56,7 @@ const Portfolio = () => {
             const params = {
                 Bucket: process.env.REACT_APP_AWS_S3_BUCKET_NAME,
                 Key: objectKey,
-                Expires: 60, // Presigned URL expiration time in seconds
+                Expires: 300, // Presigned URL expiration time in seconds
             };
             const url = await s3.getSignedUrlPromise('getObject', params);
             return url;
